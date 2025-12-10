@@ -1,0 +1,20 @@
+params:
+  - id: rpub_username
+    type: string
+    name: "rpub username"
+    description: "the rpub username to login"
+
+  - id: rpub_password
+    type: string
+    name: "rpub password"
+    description: "the rpub password to login"
+
+locales:
+  zh:
+    rpub_username:
+      name: "rpub用户名"
+      description: "rpub 登录的用户名"
+
+    rpub_password:
+      name: "rpub密码"
+      description: "rpub 登录的密码"
