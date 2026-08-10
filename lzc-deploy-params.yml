@@ -3,11 +3,15 @@ params:
     type: string
     name: "rpub username"
     description: "the rpub username to login"
+    default_value: "admin"
+    optional: false
 
   - id: rpub_password
-    type: string
+    type: secret
     name: "rpub password"
     description: "the rpub password to login"
+    default_value: "$random(len=20)"
+    optional: false
 
 locales:
   zh:
