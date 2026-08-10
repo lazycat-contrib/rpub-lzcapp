@@ -4,7 +4,6 @@ application:
   multi_instance: true
   public_path:
     - /
-
   injects:
     - id: basic-auth
       on: request
@@ -13,15 +12,14 @@ application:
         - "/*"
       do: |
         ctx.headers.set("Authorization", "Basic " + ctx.base64.encode("{{ .U.rpub_username }}:{{ .U.rpub_password }}"));
-
   upstreams:
     - location: /
       backend: http://rpub:3000/
-
 services:
   rpub:
     # ghcr.io/harshit181/rsspub:0.101.3
-    image: registry.lazycat.cloud/czyt/harshit181/rsspub:f2359107ada08cf9
+    # upstream: ghcr.io/harshit181/rsspub:0.118.0
+    image: registry.lazycat.cloud/czyt/harshit181/rsspub:a21cc5819639e9ae
     binds:
       - /lzcapp/var/data:/app/data
       - /lzcapp/var/epubs:/app/static/epubs

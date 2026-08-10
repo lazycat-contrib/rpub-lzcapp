@@ -1,11 +1,10 @@
 package: community.lazycat.app.rpub
-version: 0.101.3
+version: 0.118.0
 name: Rpub
 description: "一个自托管的 Rust 应用程序，它可以将你最喜欢的 RSS/Atom Rss转换成个人日报（EPUB）供你电子书阅读器或平板电脑阅读。"
 min_os_version: 1.5.0
 homepage: https://github.com/harshit181/RSSPub
 author: harshit181
-
 locales:
   zh:
     name: "Rpub"
