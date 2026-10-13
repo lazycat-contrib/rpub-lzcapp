@@ -9,6 +9,16 @@ on:
       - lzc-deploy-params.yml
       - manifest.yml
       - package.yml
+  push:
+    branches: [main]
+    paths:
+      - .github/lazycat-action.yml
+      - .github/workflows/lazycat.yml
+      - icon.png
+      - lzc-build.yml
+      - lzc-deploy-params.yml
+      - manifest.yml
+      - package.yml
   schedule:
     - cron: "49 21 * * *"
   workflow_dispatch:
