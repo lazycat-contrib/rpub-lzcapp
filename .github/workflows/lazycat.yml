@@ -22,6 +22,12 @@ on:
   schedule:
     - cron: "49 21 * * *"
   workflow_dispatch:
+    inputs:
+      version:
+        description: "强制构建的版本（留空则自动检查上游镜像；删除旧版后可填当前版本重新发布）"
+        type: string
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -35,6 +41,7 @@ jobs:
       config: .github/lazycat-action.yml
       dry-run: ${{ github.event_name == 'pull_request' }}
       versioned-release-asset: true
+      version: ${{ inputs.version }}
     secrets:
       LZC_API_HOST: ${{ secrets.LZC_API_HOST }}
       LZC_API_TOKEN: ${{ secrets.LZC_API_TOKEN }}
